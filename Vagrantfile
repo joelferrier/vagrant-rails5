@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
     vb.memory = "1024"
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
     sudo yum update -y
     sudo yum install -y libyaml-devel autoconf gcc-c++ patch readline-devel zlib-devel
     sudo yum install -y libffi-devel openssl-devel automake libtool bison sqlite-devel
