@@ -52,3 +52,14 @@ module Rails
   end
 end
 ```
+
+# Enabling Remote Web Console
+
+To render the rails webconsole from outside the vagrant vm insert the following code into `config/application.rb`
+
+``` ruby
+  class Application < Rails::Application
+    config.web_console.whitelisted_ips = '192.168.0.0/16'
+  end
+```
+
